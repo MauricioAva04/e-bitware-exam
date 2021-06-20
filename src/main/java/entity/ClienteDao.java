@@ -11,10 +11,7 @@ import javax.persistence.Index;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import io.swagger.annotations.ApiModel;
-
 @Entity
-@ApiModel(description = "")
 @Table(name = "clientes", indexes = { @Index(name = "clientes_idx", columnList = "id", unique = true) })
 public class ClienteDao {
 	private static final long serialVersionUID = 1L;

@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import postgre.domain.repository.PostgreRepository;
-
 import entity.ClienteDao;
 
 @Repository

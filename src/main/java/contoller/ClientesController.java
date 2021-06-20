@@ -1,9 +1,9 @@
 package contoller;
 
-import java.awt.PageAttributes.MediaType;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,20 +17,17 @@ import service.ClienteService;
 
 @RestController
 @RequestMapping(value = "/NutriNET/cliente")
-public class ClientesController
-{
+public class ClientesController {
 	@Autowired
 	private ClienteService clienteService;
 
 	@PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Response<ClienteDao> crearSolicitud(@RequestBody ClienteDao instance)
-	{
+	public Response<ClienteDao> crearSolicitud(@RequestBody ClienteDao instance) {
 		return clienteService.creaCliente(instance);
 	}
 
 	@GetMapping(value = "/{idCliente}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Response<List<ClienteDao>> consultaCliente(@PathVariable(required = false) Integer idCliente)
-	{
+	public Response<List<ClienteDao>> consultaCliente(@PathVariable(required = false) Integer idCliente) {
 		return clienteService.consultaCliente(idCliente);
 	}
 
